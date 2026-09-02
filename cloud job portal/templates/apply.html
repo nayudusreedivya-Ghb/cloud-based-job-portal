@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Apply for Job</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">CloudHire</div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/jobs">Jobs</a>
+    </nav>
+
+</header>
+
+<div class="form-container">
+
+    <h1>Apply for {{ job["title"] }}</h1>
+
+    <p>
+        <strong>Company:</strong>
+        {{ job["company"] }}
+    </p>
+
+    <form method="POST">
+
+        <label>Full Name</label>
+
+        <input type="text"
+               name="name"
+               placeholder="Enter your name"
+               required>
+
+
+        <label>Email</label>
+
+        <input type="email"
+               name="email"
+               placeholder="Enter your email"
+               required>
+
+
+        <label>Phone Number</label>
+
+        <input type="tel"
+               name="phone"
+               placeholder="Enter phone number"
+               required>
+
+
+        <label>Resume</label>
+
+        <textarea name="resume"
+                  placeholder="Paste your resume details here"
+                  required></textarea>
+
+
+        <button type="submit">
+            Submit Application
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
